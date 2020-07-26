@@ -5,3 +5,5 @@ _Mongoose_ JS _Mongodb_ interactive Validation in express
 `npm install express mongoose cors dotenv bcryptjs jsonwebtoken`
 `npm i nodemon -g`
 2. **Register and Login**
+3. **Auth Middleware**
+x-auth-token for the token validation in postman
