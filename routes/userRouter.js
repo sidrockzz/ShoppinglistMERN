@@ -48,27 +48,30 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
    try {
-      const { email, password } = req.body;
-
+      const { Unique_ID, Password } = req.body;
       // validate
-      if (!email || !password)
+      if (!Unique_ID || !Password)
          return res.status(400).json({ msg: "Not all fields have been entered." });
 
-      const user = await User.findOne({ email: email });
+      const user = await User.find({ Unique_ID: Unique_ID });
+     //console.log(Unique_ID);
+      //console.log(Password);
+      //console.log(user[0].auth);
       if (!user)
          return res
              .status(400)
              .json({ msg: "No account with this email has been registered." });
-
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
-
+      if(Password != user[0].Password){
+         return res
+             .status(400)
+             .json({ msg: "Invalid Credentials" });
+      }
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
       res.json({
          token,
          user: {
-            id: user._id,
-            displayName: user.displayName,
+            Unique_ID:user[0].Unique_ID,
+            Type: user[0].Type,
          },
       });
    } catch (err) {
