@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
+import ErrorNotice from "../misc/ErrorNotice";
 
 export default function Register() {
     const [email, setEmail] = useState();
@@ -37,6 +38,9 @@ export default function Register() {
     return (
         <div className="page">
             <h2>Register</h2>
+            {error && (
+                <ErrorNotice message={error} clearError={() => setError(undefined)} />
+            )}
             <form className="form" onSubmit={submit}>
                 <label htmlFor="register-email">Email</label>
                 <input
