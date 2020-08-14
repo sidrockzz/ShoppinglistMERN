@@ -2,7 +2,7 @@ import React,{useEffect,useContext} from "react";
 import {useHistory} from "react-router-dom";
 import UserContext from "../../context/UserContext";
 
-export default function Home(){
+export default function Student(){
     const {userData} = useContext(UserContext);
     const history = useHistory();
 
@@ -11,5 +11,5 @@ export default function Home(){
         if(!userData.user) history.push("/");
     });
 
-    return <div>Home</div>
+    return <div>Student</div>
 }

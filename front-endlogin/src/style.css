@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{
     margin:0;
     padding: 0;
@@ -22,7 +21,7 @@ input[type="submit"]{
     cursor:pointer;
 }
 
-h1,h2,h3,h4,h5,h6,p,ul,ol{
+h1,h2,h3,h5,h6,p,ul,ol{
     margin: 1em 0;
 }
 
@@ -30,10 +29,20 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
 
 body{
     font-family: "Roboto", sans-serif;
+    position: relative;
+    height: 800px;
+    min-height: 500px;
+    width: 100%;
+    background: #161415 url(wallpaper4.jpg) no-repeat top center;
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    text-align: center;
+    overflow: hidden;
+    color: white;
 }
 
 .page {
-    padding: 1rem;
+    padding: 17rem;
 }
 
 .container {
@@ -48,12 +57,10 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e02525;
 }
 #header .title {
     margin: 0;
     padding: 0 1rem;
-    color: #ffffff;
 }
 #header .auth-options {
     height: 100%;
@@ -79,7 +86,8 @@ body{
     margin-bottom: 1rem;
 }
 .form label {
-    margin-bottom: 0.2rem;
+    margin-left: -0px;
+    margin-bottom: 10px;
 }
 .form input[type="text"],
 .form input[type="email"],
@@ -100,8 +108,9 @@ body{
     padding: 0.3rem 0.5rem;
     border: 1px solid #6aa051;
     border-radius: 8px;
-    background-color: #c8ecb7;
+    background-color: lawngreen;
     font-size: 1.1rem;
+    align : center;
 }
 
 /* error-notce */
@@ -112,9 +121,10 @@ body{
     border: 1px solid #e07c7c;
     border-radius: 8px;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8d6d6;
+    background-color: rebeccapurple;
 }
 .error-notice button {
     width: 20px;
@@ -123,6 +133,14 @@ body{
     background-color: #df4343;
     color: #ffffff;
 }
+h4{
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+footer{
+    align: center;
+ }
 @media screen and (max-width:550px) {
     #header .t1{
         font-size: 1.2rem;
@@ -130,5 +148,8 @@ body{
     #header .auth-options button{
         font-size: 0.9rem;
         padding: 0 0.5rem;
+    }
+    .page{
+        padding: 0.6rem;
     }
 }

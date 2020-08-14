@@ -3,12 +3,13 @@ import {Link} from 'react-router-dom';
 import AuthOptions from "../auth/AuthOptions"
 
 export default function Header(){
-    return (
+    return (<>
         <header id="header">
             <Link  to="/">
-                <h1 className={"t1"}>MERN Auth ToDo App</h1>
+                <h1 className={"t1"}>GB - GCGC</h1>
             </Link>
             <AuthOptions/>
         </header>
+        </>
     );
 }

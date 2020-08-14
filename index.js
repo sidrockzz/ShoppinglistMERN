@@ -23,8 +23,8 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING,
         useUnifiedTopology:true,
         useCreateIndex:true
     }, (err)=> {
-    if(err) throw err;
-    console.log("MongoDB connection established")
+        if(err) throw err;
+        console.log("MongoDB connection established")
     });
 
 //set up routes

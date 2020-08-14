@@ -4,6 +4,8 @@ import Home from "./components/pages/Home"
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Header from "./components/layout/Header";
+import Admin from "./components/pages/Admin";
+import Student from "./components/pages/Student";
 import UserContext from "./context/UserContext";
 import Axios from 'axios';
 
@@ -47,13 +49,18 @@ export default function App(){
             <Header/>
             <div className={"container"}>
             <Switch>
-                <Route exact path={"/"} component={Home}/>
-                <Route path={"/login"} component={Login}/>
+                <Route exact path={"/"} component={Login}/>
                 <Route path={"/register"} component={Register}/>
+                <Route path={"/admin"} component={Admin}/>
+                <Route path={"/student"} component={Student}/>
             </Switch>
             </div>
             </UserContext.Provider>
         </Router>
+
+            <footer>
+                <h4 id={"footer"}>Copyright @ GITAM University,Bengaluru</h4>
+            </footer>
     </>
     );
 }
